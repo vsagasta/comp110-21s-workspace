@@ -6,12 +6,12 @@ from random import randint
 rolls: list[int]
 
 rolls = [2, 3, 2, 6]
+print(rolls)
 
 print(f"Length of rolls is {len(rolls)}")
 print(f"The last value in the list is {rolls[len(rolls) - 1]}")
 
 print(rolls)
-from random import randint
 rolls.append(randint(1, 6))
 print(rolls)
 
