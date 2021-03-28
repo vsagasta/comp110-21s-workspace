@@ -13,8 +13,9 @@ def read_csv_rows(csv_file: str) -> list[dict[str, str]]:
     rows: list[dict[str, str]] = []
     for line in csv_reader:
         rows.append(line)
+    file_handle.close()
     return rows
-     
+    
 
 def column_values(rows: list[dict[str, str]], column: str) -> list[str]:
     """Produce a list of all values in a single column whose name is the second parameter."""
@@ -35,8 +36,12 @@ def columnar(rows: list[dict[str, str]]) -> dict[str, list[str]]:
 
 def head(table: dict[str, list[str]], n: int) -> dict[str, list[str]]:
     """Produce a new column-based table with only the first rows visible."""
-    if len(table) <= n:
+    # keys: list[str] = table.keys()
+    first_key: str = list(table.keys())[0]
+    if len(table[first_key]) <= n:
         return table
+    # if len(table) <= n:
+    #     return table
     else:
         table_head: dict[str, list[str]] = {}
         for item in table:
