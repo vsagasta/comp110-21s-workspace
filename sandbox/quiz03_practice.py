@@ -23,3 +23,11 @@ def list_trans(data: dict[int, list[int]]) -> dict[int, list[int]]:
     return data
 
 print(list_trans({ 2:[1, 2] , 5:[3, 4] }))
+
+
+def fun(data: list[int]) -> None:
+    """."""
+    for i in data:
+        print(i)
+
+fun([3, 4, 5])
